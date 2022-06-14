@@ -50,9 +50,32 @@ foreach (char c in chars)
 //แทรก สิบ ร้อย พัน หมื่น แสน ล้าน ระหว่าง array โดย array ที่ 2 คือหลักสิบ เป็นต้น
 result.Reverse();
 //เขียนเงื่อนไขต่าง ๆ ให้ครบเช่นหลักสิบและหลักพัน
-if (result[3] == "one")
+if (result[3] != "ten")
 {
-    result[3] = "One Thousand";
+    result[3] = result[3] + "Thousand";
+}
+if (result[2] != "ten")
+    {
+        result[2] = result[2] + "Hundred";
+    }
+    if (result[1] != "ten")
+    {
+        result[2] = result[2] + "ty";
+    }
+    if (result[0] != "ten")
+    {
+        result[0] = result[0];
+    }
+if (result[2] == "ten" && result[1] == "ten" && result[0] =="ten")
+{
+    result[2] = null;
+    result[1] = null;
+    result[0] = null;
+}
+if (result[1] == "ten" && result[0] == "ten")
+{
+    result[1] = null;
+    result[0] = null;
 }
 
 
