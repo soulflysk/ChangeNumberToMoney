@@ -1,64 +1,64 @@
 ﻿
+using System.Linq;
+
 Console.Write("Please enter your money: ");
 string number = Convert.ToString(Console.ReadLine());
 
 // slice int number to array
 
 char[] chars = number.ToCharArray();
-string result = "";
+List<string> result = new List<string>();
 //เปลี่ยนตัวเลขเป็นอักษรโดยการแทนที่
 foreach (char c in chars)
 {
     switch (c)
     {
         case '1':
-            result += "one";
+            result.Add("one");
             break;
         case '2':
-            result += "two";
+            result.Add("two"); 
             break;
         case '3':
-            result += "three";
+            result.Add("three");;
             break;
         case '4':
-            result += "four";
+            result.Add("four");
             break;
         case '5':
-            result += "five";
+            result.Add("five");
             break;
         case '6':
-            result += "six";
+            result.Add("six");            
             break;
         case '7':
-            result += "seven";
+            result.Add("seven");;
             break;
         case '8':
-            result += "eight";
+            result.Add("eight");
             break;
         case '9':
-            result += "nine";
+            result.Add("nine");            
             break;
         case '0':
-            result += "ten";
+            result.Add("ten");
             break;
 
     }
 }
-//มีปัญหาในการอ้างอิงคำในตัวแปร result
+
 //แทรก สิบ ร้อย พัน หมื่น แสน ล้าน ระหว่าง array โดย array ที่ 2 คือหลักสิบ เป็นต้น
-chars[1].pop();
-chars[1] = "สิบ";
-chars[3].pop();
-chars[3] = "พัน";
-    ...
-// 
-if (chars[0] = "หนึ่ง")
+result.Reverse();
+//เขียนเงื่อนไขต่าง ๆ ให้ครบเช่นหลักสิบและหลักพัน
+if (result[3] == "one")
 {
-    chars[0] = "เอ็ด";
+    result[3] = "One Thousand";
 }
-if (chars[1] = "สอง")
-{
-    chars[2] = "ยี่สิบ"
-}
+
+
+result.Reverse();
+for (int i = 0; i < result.Count; i++)
+{ Console.Write(Convert.ToString(result[i])); }
+
 
 Console.ReadLine();
