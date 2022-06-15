@@ -17,10 +17,10 @@ foreach (char c in chars)
             result.Add("one");
             break;
         case '2':
-            result.Add("two"); 
+            result.Add("two");
             break;
         case '3':
-            result.Add("three");;
+            result.Add("three"); ;
             break;
         case '4':
             result.Add("four");
@@ -29,16 +29,16 @@ foreach (char c in chars)
             result.Add("five");
             break;
         case '6':
-            result.Add("six");            
+            result.Add("six");
             break;
         case '7':
-            result.Add("seven");;
+            result.Add("seven"); ;
             break;
         case '8':
             result.Add("eight");
             break;
         case '9':
-            result.Add("nine");            
+            result.Add("nine");
             break;
         case '0':
             result.Add("ten");
@@ -55,18 +55,42 @@ if (result[3] != "ten")
     result[3] = result[3] + "Thousand";
 }
 if (result[2] != "ten")
+{
+    result[2] = result[2] + "Hundred";
+}
+if (result[1] != "ten")
+{
+    if (result[1] == "one")
     {
-        result[2] = result[2] + "Hundred";
+        if (result[0] == "ten")
+        {
+            result[1] = "ten";
+        }
+        else if (result[0] == "one") { result[1] = "eleven"; }
+        else if (result[0] == "two") { result[1] = "twelve"; }
+        else if (result[0] == "three") { result[1] = "thirteen"; }
+        else if (result[0] == "four") { result[1] = "forteen"; }
+        else if (result[0] == "five") { result[1] = "fifteen"; }
+        else if (result[0] == "six") { result[1] = "sixteen"; }
+        else if (result[0] == "seven") { result[1] = "seventeen"; }
+        else if (result[0] == "eight") { result[1] = "eighteen"; }
+        else if (result[0] == "nine") { result[1] = "ninteen"; }
     }
-    if (result[1] != "ten")
-    {
-        result[2] = result[2] + "ty";
-    }
-    if (result[0] != "ten")
-    {
-        result[0] = result[0];
-    }
-if (result[2] == "ten" && result[1] == "ten" && result[0] =="ten")
+    if (result[1] == "two") { if (result[0] == "ten") { result[1] = "twenty"; } };
+    if (result[1] == "three") { if (result[0] == "ten") { result[1] = "thirty"; } };
+    if (result[1] == "four") { if (result[0] == "ten") { result[1] = "forty"; } };
+    if (result[1] == "five") { if (result[0] == "ten") { result[1] = "fifty"; }
+    if (result[1] == "six") { if (result[0] == "ten") { result[1] = "sixty"; } };
+    if (result[1] == "seven") { if (result[0] == "ten") { result[1] = "seventy"; } };
+    if (result[1] == "eight") { if (result[0] == "ten") { result[1] = "eighty"; } };
+    if (result[1] == "nine") { if (result[0] == "ten") { result[1] = "ninty"; } };
+    };
+}
+if (result[0] != "ten")
+{
+    result[0] = null;
+}
+if (result[2] == "ten" && result[1] == "ten" && result[0] == "ten")
 {
     result[2] = null;
     result[1] = null;
